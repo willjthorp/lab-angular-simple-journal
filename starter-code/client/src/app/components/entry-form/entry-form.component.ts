@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { EntryService } from '../../services/entry.service'
+
+import { Entry } from '../../models/entry'
 
 @Component({
   selector: 'app-entry-form',
@@ -7,7 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntryFormComponent implements OnInit {
 
-  constructor() { }
+  // @Output() onNewFood = new EventEmitter<Object>();
+  constructor(private entries: EntryService) { }
+
+  newEntry: Entry = {
+    title: '',
+    content: '',
+    date: new Date()
+  };
+
+  handleSubmitClick(title: string, content: string){
+    console.log(title, content)
+    // this.onNewFood.emit(this.newEntry);
+    this.entries.postEntry(title, content)
+  }
+
 
   ngOnInit() {
   }

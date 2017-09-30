@@ -14,6 +14,11 @@ export class EntryListComponent implements OnInit {
   constructor(private entries: EntryService) { }
 
   entryList: Entry[]
+  visibleForm: boolean = false;
+
+  toggleEntryForm() {
+    this.visibleForm = !this.visibleForm
+  }
 
   ngOnInit() {
     this.getEntries()

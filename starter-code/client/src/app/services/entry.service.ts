@@ -18,4 +18,10 @@ export class EntryService {
       .map((res) => res.json());
   }
 
+  postEntry(title: string, content: string) {
+    return this.http.post(`http://localhost:3000/api/journal-entries`, {title: title, content: content, date: new Date()})
+      .map((res) => res.json())
+      .subscribe()
+  }
+
 }

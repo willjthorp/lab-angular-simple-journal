@@ -1,3 +1,11 @@
-<p>
-  entry-form works!
-</p>
+
+<div>
+  <label>Enter Title</label>
+  <input type="text" [(ngModel)]="newEntry.title">
+</div>
+<div>
+  <label>Enter Content</label>
+  <textarea rows="4" cols="50" [(ngModel)]="newEntry.content"></textarea>
+</div>
+
+<button (click)="handleSubmitClick(newEntry.title, newEntry.content)">Submit New Entry</button>
