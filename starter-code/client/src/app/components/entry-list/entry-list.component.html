@@ -1,0 +1,7 @@
+<h2>Entries</h2>
+
+<div class="entry-container" *ngFor="let entry of entryList">
+  <h3>{{entry.title}}</h3>
+  <p>{{entry.date}}</p>
+  <a [routerLink]="['/home', entry._id]">Read entry</a>
+</div>

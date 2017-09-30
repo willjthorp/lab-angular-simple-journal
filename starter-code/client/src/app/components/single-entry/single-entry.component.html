@@ -1,0 +1,12 @@
+<h2>Read entry</h2>
+
+<div *ngIf="!entry">
+  <p>Loading...</p>
+</div>
+
+<div class="entry-container" *ngIf="entry">
+  <h3>{{entry.title}}</h3>
+  <p>{{entry.date}}</p>
+  <p>{{entry.content}}</p>
+  <a [routerLink]="['/home']">Back</a>
+</div>
